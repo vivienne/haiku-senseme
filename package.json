@@ -1,9 +1,9 @@
 {
-  "name": "haiku-senseme",
-  "version": "2.0.0",
+  "name": "@docbliny/haiku-senseme",
+  "version": "2.0.1",
   "description": "Control SenseME enabled devices from Haiku",
   "main": "dist/index.js",
-  "repository": "forty2/haiku-senseme",
+  "repository": "docbliny/haiku-senseme",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "babel --no-babelrc --plugins syntax-function-bind,transform-function-bind,transform-object-rest-spread -D -d docsrc src && jsdoc2md -f docsrc/*.js > API.md",
@@ -12,7 +12,7 @@
     "example": "node ./dist/example.js",
     "prepublish": "npm run build"
   },
-  "author": "Zach Bean <zb@forty2.com>",
+  "author": "Tomi Blinnikka <tomi.blinnikka@bliny.net>",
   "license": "MIT",
   "dependencies": {
     "any-observable": "^0.2.0",
