@@ -19,6 +19,7 @@
                 "settable": true,
                 "friendlyName": "speed",
                 "valuePath": [ "ACTUAL" ],
+                "values": [0, 7],
                 "setPath": [ ]
             },
 
