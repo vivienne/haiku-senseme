@@ -6,8 +6,6 @@ import Device from './Device';
 
 import constants from './constants';
 
-import { getAllIPAddresses } from './ip-utils'
-
 const debug = require('debug')('haiku-senseme:senseme');
 
 /**
@@ -32,7 +30,8 @@ class SenseMe extends EventEmitter {
 
         this[$private] = {
             registry: { },
-            nameToId: { }
+            nameToId: { },
+            config: { },
         }
     }
 
@@ -92,6 +91,11 @@ class SenseMe extends EventEmitter {
         if (messenger) {
             messenger.emit('message', msg);
         }
+    }
+
+    setConfig(value) {
+        this[$private].config = value;
+        return this;
     }
 
     /**
@@ -182,26 +186,23 @@ class SenseMe extends EventEmitter {
         server.bind(SENSEME_PORT);
 
         let discover = () => {
-            const ipAddresses = getAllIPAddresses();
+            const ipAddress = this[$private].config.broadcastAddress;
+            debug(`Discovery request for IP: ${ipAddress ? ipAddress : "[system chosen]" }`);
 
-            // Send a discovery message for all interfaces
-            ipAddresses.forEach((ipAddress) => {
-                debug(`Discovery request for IP: ${ipAddress}`);
-                let client = dgram.createSocket('udp4');
-                client.bind(0, ipAddress, () => {
-                    client.setBroadcast(true);
-                    client.send('<ALL;DEVICE;ID;GET>', SENSEME_PORT, BROADCAST_ADDR, () => {
-                        client.close()
-                    });
-                    nextTick(() => {
-                        Object.keys(registry)
-                            .filter(x => (registry[x].lastseen + (missingThreshold * interval))< Date.now())
-                            .forEach(x => {
-                                let dev = registry[x];
-                                delete registry[x];
-                                this.emit('lostdevice', dev.device);
-                            })
-                    });
+            let client = dgram.createSocket('udp4');
+            client.bind(0, ipAddress, () => {
+                client.setBroadcast(true);
+                client.send('<ALL;DEVICE;ID;GET>', SENSEME_PORT, BROADCAST_ADDR, () => {
+                    client.close()
+                });
+                nextTick(() => {
+                    Object.keys(registry)
+                        .filter(x => (registry[x].lastseen + (missingThreshold * interval))< Date.now())
+                        .forEach(x => {
+                            let dev = registry[x];
+                            delete registry[x];
+                            this.emit('lostdevice', dev.device);
+                        })
                 });
             });
         };

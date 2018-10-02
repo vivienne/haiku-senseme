@@ -4,7 +4,7 @@
 import Observable from './lib/observable';
 import { SenseME } from './index';
 
-SenseME
+SenseME.setConfig({ broadcastAddress: undefined })
     .on('founddevice', dev => {
         console.log(`Found a device: ${dev.name} (${dev.ip})`);
     })
