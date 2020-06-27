@@ -1,5 +1,5 @@
 // uncomment if you've installed rxjs
-// import 'any-observable/register/rxjs-all';
+import 'any-observable/register/rxjs-all';
 
 import Observable from './lib/observable';
 import { SenseME } from './index';

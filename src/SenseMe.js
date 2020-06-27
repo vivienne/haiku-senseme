@@ -151,7 +151,7 @@ class SenseMe extends EventEmitter {
     discover(interval = DEFAULT_SCAN_INTERVAL, missingThreshold = MISSING_THRESHOLD) {
         const { registry } = this[$private];
 
-        let server = this[$private].server = dgram.createSocket('udp4');
+        let server = this[$private].server = dgram.createSocket({type: 'udp4', reuseAddr: 'true'});
         server
             .on('error', (err) => {
                 console.log(`server error:\n${err.stack}`);
@@ -185,12 +185,13 @@ class SenseMe extends EventEmitter {
 
         server.bind(SENSEME_PORT);
 
+
         let discover = () => {
             const ipAddress = this[$private].config.broadcastAddress;
             debug(`Discovery request for IP: ${ipAddress ? ipAddress : "[system chosen]" }`);
 
-            let client = dgram.createSocket('udp4');
-            client.bind(0, ipAddress, () => {
+            let client = dgram.createSocket({type: 'udp4', reuseAddr: 'true'});
+            client.bind(SENSEME_PORT, ipAddress, () => {
                 client.setBroadcast(true);
                 client.send('<ALL;DEVICE;ID;GET>', SENSEME_PORT, BROADCAST_ADDR, () => {
                     client.close()

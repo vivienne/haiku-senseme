@@ -10,6 +10,7 @@
     "build": "babel src -d dist -D",
     "clean": "rm -rf dist/ && rm -rf docsrc/",
     "example": "node ./dist/example.js",
+    "entryway": "node ./dist/entryway.js",
     "prepublish": "npm run build"
   },
   "author": "Tomi Blinnikka <tomi.blinnikka@bliny.net>",
@@ -21,7 +22,8 @@
     "just-compose": "^1.1.0",
     "just-remove": "^2.1.0",
     "just-values": "^1.1.0",
-    "message-socket": "^1.0.4"
+    "message-socket": "^1.0.4",
+    "rxjs": "^6.5.5"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
