@@ -7,18 +7,12 @@
 
 haiku-senseme is a Node.js module for controlling SenseME-enabled devices by [Haiku](http://www.haikuhome.com/).
 
-## Fork info
-This fork incorporates the following changes:
-* https://github.com/forty2/haiku-senseme/pull/3
-* Adds support for running on machines with multiple network interfaces. The original only sent out the discovery request on the (first?) interface
-* Misc build updates
-
 ## Installation
 
 This module is distributed through NPM:
 
 ```sh
-npm install haiku-senseme --save
+npm install @vivienne/haiku-senseme --save
 ```
 
 ## Examples
@@ -156,6 +150,13 @@ npm run clean
 
 ## Release History
 
+* 3.0.3
+    * updated to bind send/recv sockets to same port
+    * refresh all dependencies
+* 2.0.3
+    * https://github.com/forty2/haiku-senseme/pull/3
+    * Adds support for running on machines with multiple network interfaces. The original only sent out the discovery request on the (first?) interface
+    * Misc build updates
 * 1.1.0
     * Split QueuedSocket.js into its own module, now called `message-socket`
     * Switch from `js-logger` to `debug` for logging.

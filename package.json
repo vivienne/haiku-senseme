@@ -3,7 +3,10 @@
   "version": "3.0.3",
   "description": "Control SenseME enabled devices from Haiku",
   "main": "dist/index.js",
-  "repository": "vivienne/haiku-senseme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivienne/haiku-senseme.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docs": "babel --no-babelrc --plugins syntax-function-bind,transform-function-bind,transform-object-rest-spread -D -d docsrc src && jsdoc2md -f docsrc/*.js > API.md",
@@ -39,5 +42,14 @@
       "@babel/plugin-proposal-function-bind",
       "@babel/plugin-syntax-function-bind"
     ]
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/vivienne/haiku-senseme/issues"
+  },
+  "homepage": "https://github.com/vivienne/haiku-senseme#readme",
+  "keywords": [
+    "haiku",
+    "bigassfans",
+    "senseme"
+  ]
 }
