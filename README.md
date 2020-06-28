@@ -170,6 +170,6 @@ Zach Bean – zb@forty2.com
 
 Distributed under the MIT license. See [LICENSE](LICENSE.md) for more detail.
 
-[npm-image]: https://img.shields.io/npm/v/haiku-senseme.svg?style=flat
-[npm-url]: https://npmjs.org/package/haiku-senseme
-[npm-downloads]: https://img.shields.io/npm/dm/haiku-senseme.svg?style=flat
+[npm-image]: https://img.shields.io/npm/v/@nightbird/haiku-senseme.svg?style=flat
+[npm-url]: https://npmjs.org/package/@nightbird/haiku-senseme
+[npm-downloads]: https://img.shields.io/npm/dm/@nightbird/haiku-senseme.svg?style=flat

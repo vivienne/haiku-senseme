@@ -1,5 +1,5 @@
 {
-  "name": "@vivienne/haiku-senseme",
+  "name": "@nightbird/haiku-senseme",
   "version": "3.0.3",
   "description": "Control SenseME enabled devices from Haiku",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
     "build": "babel src -d dist -D",
     "clean": "rm -rf dist/ && rm -rf docsrc/",
     "example": "node ./dist/example.js",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "author": "Vivian <vchong@gmail.com>",
   "license": "MIT",
