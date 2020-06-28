@@ -1,6 +1,6 @@
 {
   "name": "@vivienne/haiku-senseme",
-  "version": "2.0.3",
+  "version": "3.0.3",
   "description": "Control SenseME enabled devices from Haiku",
   "main": "dist/index.js",
   "repository": "vivienne/haiku-senseme",
@@ -10,10 +10,9 @@
     "build": "babel src -d dist -D",
     "clean": "rm -rf dist/ && rm -rf docsrc/",
     "example": "node ./dist/example.js",
-    "entryway": "node ./dist/entryway.js",
     "prepublish": "npm run build"
   },
-  "author": "Tomi Blinnikka <tomi.blinnikka@bliny.net>",
+  "author": "Vivian <vchong@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "any-observable": "^0.5.1",
