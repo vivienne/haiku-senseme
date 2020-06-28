@@ -12,7 +12,7 @@ haiku-senseme is a Node.js module for controlling SenseME-enabled devices by [Ha
 This module is distributed through NPM:
 
 ```sh
-npm install @vivienne/haiku-senseme --save
+npm install @nightbird/haiku-senseme --save
 ```
 
 ## Examples

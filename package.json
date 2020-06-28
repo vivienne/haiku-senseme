@@ -1,6 +1,6 @@
 {
   "name": "@nightbird/haiku-senseme",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Control SenseME enabled devices from Haiku",
   "main": "dist/index.js",
   "repository": {
