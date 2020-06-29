@@ -35,7 +35,7 @@ class Device {
      * @param {EventEmitter} messenger - An EventEmitter for funneling incoming messages from the discovery process.
      */
     constructor({ name, id, type, ip }, messenger) {
-        debug(`constructing a device: ${name}, ${id}, ${type}, ${ip}`);
+        debug(`constructing a device: \n name: ${name}, id: ${id}, type: ${type}, ip: ${ip}`);
         this[$private] = { name, id, type, ip };
 
         let socket = this[$private].socket =

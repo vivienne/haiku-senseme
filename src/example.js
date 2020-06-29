@@ -12,3 +12,10 @@ SenseME.setConfig({ broadcastAddress: undefined })
         console.log(`Lost a device: ${dev.name} (${dev.ip})`);
     })
     .discover();
+
+
+// run discovery for 30 seconds
+setTimeout(() => {
+    SenseME.cancelDiscovery();
+    SenseME.getAllDevices().forEach(dev => dev.disconnect());
+}, 3000);
