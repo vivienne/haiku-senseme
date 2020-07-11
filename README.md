@@ -149,7 +149,8 @@ npm run clean
 ```
 
 ## Release History
-
+* 3.0.5
+    * added TypeScript type definitions
 * 3.0.3
     * updated to bind send/recv sockets to same port
     * refresh all dependencies
@@ -165,7 +166,7 @@ npm run clean
     * The first release.
 
 ## Meta
-
+Original Author:
 Zach Bean – zb@forty2.com
 
 Distributed under the MIT license. See [LICENSE](LICENSE.md) for more detail.
