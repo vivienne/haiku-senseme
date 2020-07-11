@@ -1,8 +1,9 @@
 {
   "name": "@nightbird/haiku-senseme",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Control SenseME enabled devices from Haiku",
   "main": "dist/index.js",
+  "types": "types/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vivienne/haiku-senseme.git"
@@ -18,6 +19,7 @@
   "author": "Vivian <vchong@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@types/debug": "^4.1.5",
     "any-observable": "^0.5.1",
     "compute-polynomial": "^1.1.0",
     "debug": "^4.1.1",
@@ -25,14 +27,14 @@
     "just-remove": "^2.1.0",
     "just-values": "^1.1.0",
     "message-socket": "^1.0.4",
-    "rxjs": "^6.5.5"
+    "rxjs": "^6.6.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.3",
-    "@babel/core": "^7.10.3",
-    "@babel/plugin-proposal-function-bind": "^7.10.1",
-    "@babel/plugin-syntax-function-bind": "^7.10.1",
-    "@babel/preset-env": "^7.10.3"
+    "@babel/cli": "^7.10.4",
+    "@babel/core": "^7.10.4",
+    "@babel/plugin-proposal-function-bind": "^7.10.4",
+    "@babel/plugin-syntax-function-bind": "^7.10.4",
+    "@babel/preset-env": "^7.10.4"
   },
   "babel": {
     "presets": [

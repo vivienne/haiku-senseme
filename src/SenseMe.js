@@ -37,7 +37,7 @@ class SenseMe extends EventEmitter {
 
     /**
      * Process one discovered device.  This will handle
-     * tracking of devices in case they eventuall disappear,
+     * tracking of devices in case they eventually disappear,
      * and in the case of a previously unknown device will
      * emit a "founddevice" event.
      * @private
