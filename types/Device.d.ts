@@ -140,4 +140,4 @@ declare class Device {
     network: NetworkProperties
 }
 import State from "./State";
-import {LightProperties, FanProperties } from "./property-docs";
+import {LightProperties, FanProperties, SensorProperties, SmartModeProperties, SleepModeProperties, DeviceProperties, NetworkProperties} from "./property-docs";
