@@ -1,3 +1,6 @@
+import { EventEmitter } from 'events';
+import Observable, { hasObservable } from './lib/observable';
+
 /**
  * A single property of a SenseME device.
  * @interface SenseMeProperty
@@ -26,7 +29,7 @@ export interface SenseMeProperty<T> {
      * @function
      * @returns {EventEmitter}
      */
-    listen(): EventEmitter;
+    listen(): typeof EventEmitter;
 
     /**
      * Observe this property for changes.  Returns an ES7-compatible {Observable}.
@@ -37,7 +40,7 @@ export interface SenseMeProperty<T> {
      * @function
      * @returns {Observable}
      */
-    observe(): Observable;
+    observe(): typeof Observable;
 }
 
 /**
@@ -46,7 +49,7 @@ export interface SenseMeProperty<T> {
  * @interface SenseMeReadonlyProperty
  * @augments SenseMeProperty<T>
  */
-interface SenseMeReadOnlyProperty extends SenseMeProperty<T> {
+interface SenseMeReadonlyProperty<T> extends SenseMeProperty<T> {
     /**
      * The value of this property
      * @name SenseMeReadonlyProperty#value
@@ -63,7 +66,7 @@ interface SenseMeReadOnlyProperty extends SenseMeProperty<T> {
  * @interface SenseMeLevelProperty
  * @augments SenseMeProperty<number>
  */
-export interface SenseMeLevelProperty extends SenseMeProperty<number> {
+export interface SenseMeLevelProperty extends SenseMeReadonlyProperty<number> {
 
     /**
      * The minimum level for this property
@@ -77,7 +80,7 @@ export interface SenseMeLevelProperty extends SenseMeProperty<number> {
      * @name SenseMeLevelProperty#maximum
      * @type {SenseMeReadonlyProperty<number>}
      */
-    maximum: SenseMeReadOnlyProperty<number>;
+    maximum: SenseMeReadonlyProperty<number>;
 }
 
 /**
@@ -187,7 +190,7 @@ export interface SmartModeProperties {
      * @name SmartModeProperties#actual
      * @type {SenseMeReadonlyProperty<('cooling'|'heating'|'off')>}
      */
-    actual: SenseMeReadOnlyProperty<('cooling'|'heating'|'off')>;
+    actual: SenseMeReadonlyProperty<('cooling'|'heating'|'off')>;
 
     /**
      * The current desired smart mode setting.
@@ -278,7 +281,7 @@ export interface DeviceProperties {
      * @name DeviceProperties#hasLight
      * @type {SenseMeReadonnlyProperty<boolean>}
      */
-    hasLight: SenseMeReadOnlyProperty<boolean>;
+    hasLight: SenseMeReadonlyProperty<boolean>;
 
     /**
      * The power status of the confirmation beep heard when changing settings.
@@ -326,7 +329,7 @@ export interface NetworkProperties {
      * @name NetworkProperties#token
      * @type {SenseMeReadonlyProperty<number>}
      */
-    token: SenseMeReadOnlyProperty<number>;
+    token: SenseMeReadonlyProperty<number>;
 
     /**
      * DHCP status
@@ -340,7 +343,7 @@ export interface NetworkProperties {
      * @name NetworkProperties#ssid
      * @type {SenseMeReadonlyProperty<string>}
      */
-    ssid: SenseMeReadOnlyProperty<string>;
+    ssid: SenseMeReadonlyProperty<string>;
 
     /**
      * The power status of the device's internal access point.

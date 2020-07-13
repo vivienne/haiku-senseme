@@ -1,3 +1,6 @@
+import { EventEmitter } from 'events';
+import Observable, { hasObservable } from './lib/observable';
+import State from './State';
 export { Device as default };
 
 /**
@@ -139,5 +142,4 @@ declare class Device {
      */
     network: NetworkProperties
 }
-import State from "./State";
 import {LightProperties, FanProperties, SensorProperties, SmartModeProperties, SleepModeProperties, DeviceProperties, NetworkProperties} from "./property-docs";
