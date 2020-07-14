@@ -30,9 +30,9 @@
     "rxjs": "^6.6.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.4",
-    "@babel/core": "^7.10.4",
-    "@babel/plugin-proposal-function-bind": "^7.10.4",
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-function-bind": "^7.10.5",
     "@babel/plugin-syntax-function-bind": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "babel-plugin-lodash": "^3.3.4"
