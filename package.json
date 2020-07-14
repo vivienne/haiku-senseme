@@ -1,6 +1,6 @@
 {
   "name": "@nightbird/haiku-senseme",
-  "version": "3.0.6",
+  "version": "3.0.7",
   "description": "Control SenseME enabled devices from Haiku",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -24,8 +24,8 @@
     "compute-polynomial": "^1.1.0",
     "debug": "^4.1.1",
     "just-compose": "^1.1.0",
-    "just-remove": "^2.1.0",
     "just-values": "^1.1.0",
+    "lodash": "^4.17.19",
     "message-socket": "^1.0.4",
     "rxjs": "^6.6.0"
   },
@@ -34,7 +34,8 @@
     "@babel/core": "^7.10.4",
     "@babel/plugin-proposal-function-bind": "^7.10.4",
     "@babel/plugin-syntax-function-bind": "^7.10.4",
-    "@babel/preset-env": "^7.10.4"
+    "@babel/preset-env": "^7.10.4",
+    "babel-plugin-lodash": "^3.3.4"
   },
   "babel": {
     "presets": [

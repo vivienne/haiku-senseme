@@ -1,6 +1,7 @@
 import { EventEmitter } from 'events';
-
 import Observable, { hasObservable } from './lib/observable';
+import { _ as _lodash} from 'lodash';
+import { without } from 'lodash/array';
 
 function getValueAtPath(path, base) {
     return [].concat(path).reduce(
@@ -41,7 +42,8 @@ class State {
                     subscriber => {
                         this[$private].allObservers.push(subscriber);
                         return () => {
-                            this[$private].allObservers.remove(subscriber);
+                            _lodash.without(this[$private].allObservers,subscriber);
+                            //this[$private].allObservers.remove(subscriber);
                         }
                     }
                 );
@@ -64,7 +66,8 @@ class State {
                             subscriber.next(self.get(path));
                             acc[valueKey].push(subscriber);
                             return () => {
-                                acc[valueKey].remove(subscriber);
+                                _lodash.without(acc[valueKey],subscriber);
+                                //acc[valueKey].remove(subscriber);
                             };
                         }
                     )

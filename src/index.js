@@ -1,5 +1,3 @@
-import './lib/polyfills';
-
 import { loadCommands } from './lib/walk';
 
 loadCommands();

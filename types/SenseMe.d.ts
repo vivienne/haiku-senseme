@@ -1,9 +1,14 @@
+import { nextTick } from 'process';
+import dgram from 'dgram';
+
+import constants from './constants';
+
 export { single as default };
 declare let single: SenseMe;
 /**
  * Discover and manage SenseME-enabled devices on the local network.
  */
-declare class SenseMe {
+declare class SenseMe extends EventEmitter {
     constructor(...args: any[]);
     /**
      * Process one discovered device.  This will handle
@@ -58,4 +63,5 @@ declare class SenseMe {
      */
     cancelDiscovery(): void;
 }
+import { EventEmitter } from 'events';
 import Device from "./Device";

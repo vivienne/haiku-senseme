@@ -1,4 +1,6 @@
 import Observable from './index';
+import { _ as _lodash} from 'lodash';
+import { without } from 'lodash/array';
 
 class FlatMapObserver {
     constructor(subscriber, mapper) {
@@ -37,7 +39,8 @@ class FlatMapObserver {
                 },
                 ::subscriber.error,
                 () => {
-                    this._subs.remove(sub);
+                    _lodash.without(this._subs,sub);
+                    //this._subs.remove(sub);
                     this._closeIfReady();
                 }
             );

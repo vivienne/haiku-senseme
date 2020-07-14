@@ -29,7 +29,7 @@ export interface SenseMeProperty<T> {
      * @function
      * @returns {EventEmitter}
      */
-    listen(): any;
+    listen(): EventEmitter;
 
     /**
      * Observe this property for changes.  Returns an ES7-compatible {Observable}.
@@ -40,7 +40,7 @@ export interface SenseMeProperty<T> {
      * @function
      * @returns {Observable}
      */
-    observe(): any;
+    observe(): typeof Observable;
 }
 
 /**

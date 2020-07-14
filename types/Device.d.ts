@@ -29,13 +29,13 @@ declare class Device {
      * @param {...string} msgs - The messages to send
      * @private
      */
-    private _sendMessage;
+    _sendMessage(...msgs: string[]): void;
     /**
      * Process one incoming message.
      * @param {string} msg - The message
      * @private
      */
-    private _handleMessage;
+    _handleMessage(msg: string): void;
     /**
      * Disconnect from the device.
      */

@@ -37,10 +37,10 @@ class Device {
     constructor({ name, id, type, ip }, messenger) {
         debug(`constructing a device: \n name: ${name}, id: ${id}, type: ${type}, ip: ${ip}`);
         this[$private] = { name, id, type, ip };
-
+        
         let socket = this[$private].socket =
             new MessageSocket(ip, SENSEME_PORT, /\([^)]+\)/g);
-
+      
         socket.on('data', data => this._handleMessage(data.toString()));
         if (messenger) {
             messenger.on('message', msg => this._handleMessage(msg.toString()));
