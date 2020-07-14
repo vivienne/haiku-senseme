@@ -149,6 +149,8 @@ npm run clean
 ```
 
 ## Release History
+* 3.0.7
+    * switch from `just-remove` to `lodash` array method
 * 3.0.5
     * added TypeScript type definitions
 * 3.0.3
