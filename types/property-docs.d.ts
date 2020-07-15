@@ -66,7 +66,7 @@ interface SenseMeReadonlyProperty<T> extends SenseMeProperty<T> {
  * @interface SenseMeLevelProperty
  * @augments SenseMeProperty<number>
  */
-export interface SenseMeLevelProperty extends SenseMeReadonlyProperty<number> {
+export interface SenseMeLevelProperty extends SenseMeProperty<number> {
 
     /**
      * The minimum level for this property
