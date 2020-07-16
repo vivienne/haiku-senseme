@@ -122,6 +122,45 @@
                 "settable": true,
                 "type": "power"
             }
+        },
+
+        "COLOR": {
+            "meta": {},
+
+            "TEMP": {
+                "meta": {
+                    "friendlyName": "temperature",
+                    "valuePath": [ "VALUE" ],
+                    "settable": false
+                },
+
+                "VALUE": {
+                    "meta": {
+                        "type": "number",
+                        "friendlyName": "temperature",
+                        "settable": true,
+                        "values": [2200, 5000]
+                    }
+                },
+
+                "MIN": {
+                    "meta": {
+                        "type": "number",
+                        "isDerived": true,
+                        "friendlyName": "minimum",
+                        "settable": false
+                    }
+                },
+
+                "MAX": {
+                    "meta": {
+                        "type": "number",
+                        "isDerived": true,
+                        "friendlyName": "maximum",
+                        "settable": false
+                    }
+                }
+            }
         }
     },
 
@@ -404,6 +443,21 @@
                 "friendlyName": "accessPointStatus",
                 "settable": false,
                 "type": "power"
+            }
+        }
+    },
+
+    "FW": {
+        "meta": {
+            "friendlyName": "device",
+            "type": "group"
+        },
+
+        "NAME": {
+            "meta": {
+                "friendlyName": "firmware",
+                "settable": false,
+                "type": "string"
             }
         }
     }

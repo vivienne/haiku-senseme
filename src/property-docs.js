@@ -131,6 +131,12 @@
  */
 
 /**
+ * The temperature of the light in Kelvins
+ * @name LightProperties#temperature
+ * @type {SenseMeLevelProperty}
+ */
+
+/**
  * A collection of the device's properties related to the occupancy sensor.
  * @interface SensorProperties
  */
@@ -263,6 +269,12 @@
  * The height of the device abvoe the floor in feet.
  * @name DeviceProperties#heightInFeet
  * @type {SenseMeProperty<number>}
+ */
+
+/**
+ * The firmware version.
+ * @name DeviceProperties#firmware
+ * @type {SenseMeProperty<string>}
  */
 
 /**

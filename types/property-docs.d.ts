@@ -156,6 +156,13 @@ export interface LightProperties {
      * @type {SenseMeProperty<('on'|'off')>}
      */
     automaticOn: SenseMeProperty<('on'|'off')>;
+
+    /**
+     * The temperature of the light in Kelvins
+     * @name LightProperties#temperature
+     * @type {SenseMeLevelProperty}
+     */
+    temperature: SenseMeLevelProperty;
 }
 
 /**

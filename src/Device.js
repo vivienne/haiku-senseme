@@ -94,6 +94,7 @@ class Device {
      * @private
      */
     _sendMessage(...msgs) {
+        debug(`Sending message: ${msgs}`);
         this[$private].socket.send(
             msgs
                 .map(x => Array.isArray(x) ? x.join(';') : x)
