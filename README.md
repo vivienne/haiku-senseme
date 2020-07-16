@@ -149,7 +149,7 @@ npm run clean
 ```
 
 ## Release History
-* 3.0.8
+* 3.0.9
     * added color temperature commands
 * 3.0.7
     * switch from `just-remove` to `lodash` array method
