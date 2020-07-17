@@ -449,16 +449,10 @@
 
     "FW": {
         "meta": {
-            "friendlyName": "device",
-            "type": "group"
-        },
-
-        "NAME": {
-            "meta": {
-                "friendlyName": "firmware",
-                "settable": false,
-                "type": "string"
-            }
+            "friendlyName": "firmware",
+            "valuePath": [ "NAME" ],
+            "settable": false,
+            "type": "string"
         }
     }
 }

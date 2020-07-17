@@ -238,7 +238,7 @@
 /**
  * Does the fan have a light kit attached?
  * @name DeviceProperties#hasLight
- * @type {SenseMeReadonnlyProperty<boolean>}
+ * @type {SenseMeReadonlyProperty<boolean>}
  */
 
 /**

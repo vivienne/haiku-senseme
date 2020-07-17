@@ -176,10 +176,10 @@ class SenseMe extends EventEmitter {
             })
             .on('listening', () => {
                 var address = server.address();
-                console.log(`server listening ${address.address}:${address.port}`);
+                console.log(`SenseME server listening ${address.address}:${address.port}`);
             })
             .on('close', () => {
-                console.log('server shutting down');
+                console.log('SenseME discovery server shutting down');
             })
             ;
 
