@@ -319,11 +319,18 @@ export interface DeviceProperties {
     heightInMeters: SenseMeProperty<number>;
 
     /**
-     * The height of the device abvoe the floor in feet.
+     * The height of the device above the floor in feet.
      * @name DeviceProperties#heightInFeet
      * @type {SenseMeProperty<number>}
      */
     heightInFeet: SenseMeProperty<number>;
+
+    /**
+     * The device firmware revision.
+     * @name DeviceProperties#firmware
+     * @type {SenseMeProperty<string>}
+     */
+    firmware: SenseMeProperty<string>;
 }
 
 /**
