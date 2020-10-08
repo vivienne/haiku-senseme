@@ -146,15 +146,18 @@ class SenseMe extends EventEmitter {
      * Discovery will continue until {@link cancelDiscovery} is called.
      * @param {number} [interval=10000] - How often (in milliseconds) should a discovery request be sent out?
      * @param {number} [missingThreshold=3] - How many discovery requests must a device miss before being considered no longer on the network?
+     * @param {logger} [logger=null] - An optional logger to use. Defaults to using console if not passed.
      * @emits SenseMe#lostdevice
      */
-    discover(interval = DEFAULT_SCAN_INTERVAL, missingThreshold = MISSING_THRESHOLD) {
+    discover(interval = DEFAULT_SCAN_INTERVAL, missingThreshold = MISSING_THRESHOLD, logger = null) {
         const { registry } = this[$private];
+
+        let log = logger || console;
 
         let server = this[$private].server = dgram.createSocket({type: 'udp4', reuseAddr: 'true'});
         server
             .on('error', (err) => {
-                console.log(`server error:\n${err.stack}`);
+                log.error(`server error:\n${err.stack}`);
                 server.close();
             })
             .on('message', (msg, { address: ip }) => {
@@ -176,15 +179,14 @@ class SenseMe extends EventEmitter {
             })
             .on('listening', () => {
                 var address = server.address();
-                console.log(`SenseME server listening ${address.address}:${address.port}`);
+                log.info(`SenseME server listening ${address.address}:${address.port}`);
             })
             .on('close', () => {
-                console.log('SenseME discovery server shutting down');
+                log.info('SenseME discovery server shutting down');
             })
             ;
 
         server.bind(SENSEME_PORT);
-
 
         let discover = () => {
             const ipAddress = this[$private].config.broadcastAddress;
