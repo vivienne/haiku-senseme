@@ -22,19 +22,19 @@
     "@types/debug": "^4.1.5",
     "any-observable": "^0.5.1",
     "compute-polynomial": "^1.1.0",
-    "debug": "^4.1.1",
+    "debug": "^4.2.0",
     "just-compose": "^1.1.0",
     "just-values": "^1.1.0",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.20",
     "message-socket": "^1.0.4",
-    "rxjs": "^6.6.0"
+    "rxjs": "^6.6.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.5",
-    "@babel/core": "^7.10.5",
-    "@babel/plugin-proposal-function-bind": "^7.10.5",
-    "@babel/plugin-syntax-function-bind": "^7.10.4",
-    "@babel/preset-env": "^7.10.4",
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-function-bind": "^7.12.1",
+    "@babel/plugin-syntax-function-bind": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
     "babel-plugin-lodash": "^3.3.4"
   },
   "babel": {
