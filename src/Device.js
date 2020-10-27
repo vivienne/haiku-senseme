@@ -136,9 +136,10 @@ class Device {
             }
 
             // DEVICE;LIGHT;PRESENT;COLOR should return PRESENT as the value
-            if (path[0] === 'DEVICE' && path[1] === 'LIGHT') {
+            // only on haiku light standalone
+            /*if (path[0] === 'DEVICE' && path[1] === 'LIGHT') {
                 newValue = path.pop();
-            }
+            }*/
 
             if (deviceName === this.name) {
                 this.state.set(path, newValue);
