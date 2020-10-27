@@ -135,6 +135,11 @@ class Device {
                 newValue = path.pop();
             }
 
+            // DEVICE;LIGHT;PRESENT;COLOR should return PRESENT as the value
+            if (path[0] === 'DEVICE' && path[1] === 'LIGHT') {
+                newValue = path.pop();
+            }
+
             if (deviceName === this.name) {
                 this.state.set(path, newValue);
             }
